@@ -72,7 +72,7 @@
 						</div>
 						
 						<div class="w-100 blanche-bg">
-							<input type="range" id="start" name="volume" min="15" max="30"  v-model="tempTarget" @change="changeTemp()">
+							<input type="range" id="start" name="volume" min="16" max="30"  v-model="tempTarget" @change="changeTemp()">
 						</div>
 
 
