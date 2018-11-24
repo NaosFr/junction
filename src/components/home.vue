@@ -13,7 +13,7 @@
 				</div>
 				<div class="flex flex-2">
 					<div>
-						<img src="@/assets/make-it-rain.svg" width="710"/>
+						<img src="@/assets/landing_image.png" width="710"/>
 					</div>
 				</div>
 			</div>
@@ -107,38 +107,7 @@
 								</tr>
 							</tbody>
 						</table>
-						
-						<div class="w-100 blanche-bg roboto"><p>list n 2</p></div>
-						<table class="roboto">
-							<thead>
-								<tr>
-									<th scope="col"></th>
-									<th scope="col">Komit</th>
-									<th scope="col">Article</th>
-									<th scope="col">Wiki</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">Like</th>
-									<td>test</td>
-									<td>test</td>
-									<td>test</td>
-								</tr>
-								<tr>
-									<th scope="row">Like</th>
-									<td>test</td>
-									<td>test</td>
-									<td>test</td>
-								</tr>
-								<tr>
-									<th scope="row">Like</th>
-									<td>test</td>
-									<td>test</td>
-									<td>test</td>
-								</tr>
-							</tbody>
-						</table>
+		
 					</div>
 				</div>
 			</div>
