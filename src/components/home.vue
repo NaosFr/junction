@@ -8,7 +8,7 @@
 				<div class="flex flex-1">
 					<div>
 						<h1 class="title roboto">Warm yourself to save the world.</h1>
-						<p class="description roboto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. lorem wd. turlupine !</p>
+						<p class="description roboto">Use an intelligent radiator with an integrated processor to warm yourself. The processor helps to calculate a large amount of information to help medicine and researchers around the world.</p>
 					</div>
 				</div>
 				<div class="flex flex-2">
@@ -147,13 +147,6 @@
 </template>
 
 <script>
-
-// - degres cellculs (fake)
-// - degres que tu veux (fake) 
-// - listes des recherches en cours ( entrain de miner) + (name + type + count)
-// - liste des recherches termine (name + type + count)
-
-// - jauge choisir connecter 
 
 export default {
 	data () {
@@ -295,6 +288,9 @@ export default {
 		margin: 0 auto;
 		position: relative;
 		bottom: -42px;
+		-webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+		box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
 	}
 
 	.controller .flex{
