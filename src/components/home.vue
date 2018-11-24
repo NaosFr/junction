@@ -75,8 +75,6 @@
 							<input type="range" id="start" name="volume" min="16" max="30"  v-model="tempTarget" @change="changeTemp()">
 						</div>
 
-
-						<div class="w-100 blanche-bg roboto"><p>list n 1</p></div>
 						<table class="roboto">
 							<thead>
 								<tr>
@@ -286,7 +284,7 @@ export default {
 		line-height: 20px;
 		text-align: center;
 		border-radius: .5rem;
-		color: #302d2d;
+		color: #fff;
 		border: 1px solid rgba(119,127,136,.2);
 		transition: all .15s ease-in-out;
 		cursor: pointer;
@@ -310,19 +308,19 @@ export default {
 
 	.content:hover {
 	    border: 1px solid #777f88;
-    	color: #575353;
+    	color: #c2c2c2;
    	}
 		
 	.temp-actual {
-		background-color: #9fdb83;
+		background-color: #568beae0;
 	}
 
 	.temp-target {
-		background-color: #cbd4ed;
+		background-color: #8b4cf2e0;
 	}
 	
 	.process {
-		background-color: #efe2cb;
+		background-color: #b434a0d4;
 	}
 
 	table {
@@ -343,6 +341,7 @@ export default {
 	}
 
 	thead th {
+		padding: .75rem;
     	color: #e4e5e6;
     	background-color: #23282c;
     	border-color: #343b41;
@@ -375,7 +374,7 @@ export default {
 	input[type=range] {
 		height: 32px;
 		-webkit-appearance: none;
-		margin: 10px 0;
+		margin: 30px 0;
 		width: 70%;
 	}
 	input[type=range]:focus {
