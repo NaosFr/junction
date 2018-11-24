@@ -25,7 +25,7 @@
 					<h2>Your heater cure diseases</h2>
 				</div>
 				<div class="w-100 text-align-center">
-					<p class="description">Your computer in this demo !</p>
+					<p class="description">For this demo, World Community Grid is ran on your processor to heat up while curing diseases</p>
 				</div>
 				<div class="features-list flex jc-space-between">
 					<div class="feature">
