@@ -1,6 +1,8 @@
 <template>
 	<section>
-		<header></header>
+		<header>
+			
+		</header>
 		<main>
 			<div class="intro flex">
 				<div class="flex flex-1">
@@ -40,25 +42,104 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="flex roboto text-align-center">
 				<p class="description description-health">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis maiores suscipit, nostrum, sequi, doloribus blanditiis dolor vitae voluptas placeat porro itaque dolorum velit ex natus. Incidunt reiciendis deleniti reprehenderit in.</p>
 			</div>
 
 			<div class="flex roboto text-align-center">
 				<div class="controller">
-					<div class="flex text-align-center">
-						<div class="content flex-center-middle">
-							<div class="w-100">
-								<p>Temperate actual</p>
-								<p>28 °</p>
+						<div class="w-100">
+							<div class="flex text-align-center">
+								<div class="temp-actual relative content flex-center-middle">
+									<div class="w-100">
+										<p>Temperature actual</p>
+										<span>{{tempActual}} °</span>
+									</div>
+								</div>
+								<div class="temp-target content relative flex-center-middle">
+									<div class="w-100">
+										<p>Temperature target</p>
+										<span>{{tempTarget}} °</span>
+									</div>
+								</div>
+								<div class="process relative content flex-center-middle">
+									<div class="w-100">
+										<p>Processor used</p>
+										<span>{{proccesor}} %</span>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="content flex-center-middle">
-							<div class="w-100">
-								<p>Temperate target</p>
-								<p>34 °</p>
-							</div>
+						
+						<div class="w-100 blanche-bg">
+							<input type="range" id="start" name="volume" min="15" max="30"  v-model="tempTarget" @change="changeTemp()">
 						</div>
+
+
+						<div class="w-100 blanche-bg roboto"><p>list n 1</p></div>
+						<table class="roboto">
+							<thead>
+								<tr>
+									<th scope="col"></th>
+									<th scope="col">Komit</th>
+									<th scope="col">Article</th>
+									<th scope="col">Wiki</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">Like</th>
+									<td>test</td>
+									<td>test</td>
+									<td>test</td>
+								</tr>
+								<tr>
+									<th scope="row">Like</th>
+									<td>test</td>
+									<td>test</td>
+									<td>test</td>
+								</tr>
+								<tr>
+									<th scope="row">Like</th>
+									<td>test</td>
+									<td>test</td>
+									<td>test</td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<div class="w-100 blanche-bg roboto"><p>list n 2</p></div>
+						<table class="roboto">
+							<thead>
+								<tr>
+									<th scope="col"></th>
+									<th scope="col">Komit</th>
+									<th scope="col">Article</th>
+									<th scope="col">Wiki</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">Like</th>
+									<td>test</td>
+									<td>test</td>
+									<td>test</td>
+								</tr>
+								<tr>
+									<th scope="row">Like</th>
+									<td>test</td>
+									<td>test</td>
+									<td>test</td>
+								</tr>
+								<tr>
+									<th scope="row">Like</th>
+									<td>test</td>
+									<td>test</td>
+									<td>test</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
@@ -76,10 +157,26 @@
 // - jauge choisir connecter 
 
 export default {
-	name: 'HelloWorld',
 	data () {
 		return {
-			msg: 'Welcome to Your Vue.js App'
+			proccesor: 0,
+			tempActual: 0,
+			tempTarget: 20
+		}
+	},
+	mounted() {
+		let vm = this;
+		setInterval(function(){
+			vm.$http.get('/').then((response) => {
+				vm.tempActual = response.data.temp;
+			})
+		}, 1000);
+	},
+	methods: {
+		changeTemp() {
+			this.$http.post('/temp/'+ this.tempTarget + '').then((response) => {
+			  console.log(response.data)
+			})
 		}
 	}
 }
@@ -187,29 +284,31 @@ export default {
 
 	.controller {
 		background: #011F3F;
-		padding: 1.5rem 1.5rem 0;
+		padding: 2.5rem 2.5rem 0;
 		border-top-left-radius: 1rem;
 		border-top-right-radius: 1rem;
 		width: 90%;
 		max-width: 920px;
 		margin: 0 auto;
-		height: 600px;
 		position: relative;
 		bottom: -42px;
 	}
 
 	.controller .flex{
-		width: 50%;
+		background-color: #fff;
+		height: 100%;
+		border-top-left-radius: 1rem;
+		border-top-right-radius: 1rem;
 		-webkit-box-pack: justify;
 		-ms-flex-pack: justify;
 		justify-content: space-between;
 	}
 
 	.content {
-		background-color: #fff;
+		background-color: #f8f8f8;
 		border-radius: 1rem;
 		flex-wrap: nowrap;
-		margin: 3rem 0 1rem;
+		margin: 1.5rem;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		justify-content: space-between;
@@ -219,20 +318,179 @@ export default {
 		line-height: 20px;
 		text-align: center;
 		border-radius: .5rem;
-		margin: 0 0 1rem;
-		color: #777F88;
+		color: #302d2d;
 		border: 1px solid rgba(119,127,136,.2);
 		transition: all .15s ease-in-out;
 		cursor: pointer;
 	}
-
+	
 	.content p{
-		margin-top: 5px;
+		margin-bottom: 12px;
+		font-size: 17px;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+	}
+
+	.content span{
+		font-weight: 700;
+		font-size: 40px;
+		position: absolute;
+		bottom: 25px;
+		right: 15px;
 	}
 
 	.content:hover {
 	    border: 1px solid #777f88;
-    	color: #2962FF;
+    	color: #575353;
    	}
+		
+	.temp-actual {
+		background-color: #9fdb83;
+	}
+
+	.temp-target {
+		background-color: #cbd4ed;
+	}
 	
+	.process {
+		background-color: #efe2cb;
+	}
+
+	table {
+		width: 100%;
+		max-width: 100%;
+		background-color: transparent;
+		border-collapse: collapse;
+		display: table;
+		border-spacing: 2px;
+		border-color: grey;
+		border: 1px solid #e4e5e6;
+	}
+
+	thead {
+		display: table-header-group;
+    	vertical-align: middle;
+    	border-color: inherit;
+	}
+
+	thead th {
+    	color: #e4e5e6;
+    	background-color: #23282c;
+    	border-color: #343b41;
+	}
+	
+	tbody {
+		display: table-row-group;
+		vertical-align: middle;
+		border-color: inherit;
+	}
+	tr{
+		display: table-row;
+		vertical-align: inherit;
+		border-color: inherit;
+		border-top: 1px solid #777F88;
+		background-color: #fdfdfd;
+	}
+
+	tr:hover{
+		background-color: #f5f1f1;
+	}
+	
+	tbody td, tbody th {
+		padding: .75rem;
+		vertical-align: top;
+		border-top: 1px solid #c8ced3;
+	}
+
+
+	input[type=range] {
+		height: 32px;
+		-webkit-appearance: none;
+		margin: 10px 0;
+		width: 70%;
+	}
+	input[type=range]:focus {
+		outline: none;
+	}
+	input[type=range]::-webkit-slider-runnable-track {
+		width: 100%;
+		height: 9px;
+		cursor: pointer;
+		animate: 0.2s;
+		box-shadow: 0px 0px 0px #000000;
+		background: #E3E3E3;
+		border-radius: 37px;
+		border: 0px solid #000000;
+	}
+	input[type=range]::-webkit-slider-thumb {
+		box-shadow: 0px 0px 0px #000000;
+		border: 1px solid #E3E3E3;
+		height: 25px;
+		width: 25px;
+		border-radius: 47px;
+		background: #3D3D3D;
+		cursor: pointer;
+		-webkit-appearance: none;
+		margin-top: -8.5px;
+	}
+	input[type=range]:focus::-webkit-slider-runnable-track {
+		background: #E3E3E3;
+	}
+	input[type=range]::-moz-range-track {
+		width: 100%;
+		height: 9px;
+		cursor: pointer;
+		animate: 0.2s;
+		box-shadow: 0px 0px 0px #000000;
+		background: #E3E3E3;
+		border-radius: 37px;
+		border: 0px solid #000000;
+	}
+	input[type=range]::-moz-range-thumb {
+		box-shadow: 0px 0px 0px #000000;
+		border: 1px solid #E3E3E3;
+		height: 25px;
+		width: 25px;
+		border-radius: 47px;
+		background: #3D3D3D;
+		cursor: pointer;
+	}
+	input[type=range]::-ms-track {
+		width: 100%;
+		height: 9px;
+		cursor: pointer;
+		animate: 0.2s;
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
+	}
+	input[type=range]::-ms-fill-lower {
+		background: #E3E3E3;
+		border: 0px solid #000000;
+		border-radius: 74px;
+		box-shadow: 0px 0px 0px #000000;
+	}
+	input[type=range]::-ms-fill-upper {
+		background: #E3E3E3;
+		border: 0px solid #000000;
+		border-radius: 74px;
+		box-shadow: 0px 0px 0px #000000;
+	}
+	input[type=range]::-ms-thumb {
+		margin-top: 1px;
+		box-shadow: 0px 0px 0px #000000;
+		border: 1px solid #E3E3E3;
+		height: 25px;
+		width: 25px;
+		border-radius: 47px;
+		background: #3D3D3D;
+		cursor: pointer;
+	}
+	input[type=range]:focus::-ms-fill-lower {
+		background: #E3E3E3;
+	}
+	input[type=range]:focus::-ms-fill-upper {
+		background: #E3E3E3;
+	}
 </style>
