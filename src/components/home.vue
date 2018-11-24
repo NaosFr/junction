@@ -86,19 +86,31 @@
 							</thead>
 							<tbody>
 								<tr>
-									<th scope="row">Like</th>
+									<th scope="row">Ebola</th>
 									<td>test</td>
 									<td>test</td>
 									<td>test</td>
 								</tr>
 								<tr>
-									<th scope="row">Like</th>
+									<th scope="row">Childhood Cancer</th>
 									<td>test</td>
 									<td>test</td>
 									<td>test</td>
 								</tr>
 								<tr>
-									<th scope="row">Like</th>
+									<th scope="row">FightAIDS</th>
+									<td>test</td>
+									<td>test</td>
+									<td>test</td>
+								</tr>
+								<tr>
+									<th scope="row">OpenZika</th>
+									<td>test</td>
+									<td>test</td>
+									<td>test</td>
+								</tr>
+								<tr>
+									<th scope="row">Microbiome Immunity</th>
 									<td>test</td>
 									<td>test</td>
 									<td>test</td>
@@ -240,8 +252,8 @@ export default {
 	}
 
 	.feature:hover {
-	    border: 1px solid #777f88;
-    	color: #2962FF;
+	    border: 1px solid #568beae0;
+    	color: #8b4cf2e0;
    	}
 
 
@@ -345,6 +357,7 @@ export default {
     	color: #e4e5e6;
     	background-color: #23282c;
     	border-color: #343b41;
+    	text-align: left;
 	}
 	
 	tbody {
@@ -368,6 +381,7 @@ export default {
 		padding: .75rem;
 		vertical-align: top;
 		border-top: 1px solid #c8ced3;
+		text-align: left;
 	}
 
 
