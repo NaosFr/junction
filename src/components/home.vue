@@ -128,14 +128,14 @@ export default {
 	mounted() {
 		let vm = this;
 		setInterval(function(){
-			vm.$http.get('/').then((response) => {
+			vm.$http.get('http://localhost:8080/').then((response) => {
 				vm.tempActual = response.data.temp;
 			})
 		}, 1000);
 	},
 	methods: {
 		changeTemp() {
-			this.$http.post('/temp/'+ this.tempTarget + '').then((response) => {
+			this.$http.post('http://localhost:8080/temp/'+ this.tempTarget + '').then((response) => {
 			  console.log(response.data)
 			})
 		}
@@ -147,7 +147,7 @@ export default {
 <style scoped>
 	header {
 		justify-content: center;
-		margin-top: 15px;
+		margin-top: 24px;
 	}
 
 	main {
