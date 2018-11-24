@@ -44,10 +44,6 @@
 			</div>
 
 			<div class="flex roboto text-align-center">
-				<p class="description description-health">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis maiores suscipit, nostrum, sequi, doloribus blanditiis dolor vitae voluptas placeat porro itaque dolorum velit ex natus. Incidunt reiciendis deleniti reprehenderit in.</p>
-			</div>
-
-			<div class="flex roboto text-align-center">
 				<div class="controller">
 						<div class="w-100">
 							<div class="flex text-align-center">
@@ -276,11 +272,7 @@ export default {
 	    border: 1px solid #777f88;
     	color: #2962FF;
    	}
-	
-	.description-health {
-		width: 70%;
-		margin: 0 auto;
-	}
+
 
 	.controller {
 		background: #011F3F;
