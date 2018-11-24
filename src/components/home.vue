@@ -1,13 +1,13 @@
 <template>
 	<section>
 		<header>
-			
+			<img src="@/assets/Logo_FireDoc.png" width="150"/>
 		</header>
 		<main>
 			<div class="intro flex">
 				<div class="flex flex-1">
 					<div>
-						<h1 class="title roboto">Control your heater.</h1>
+						<h1 class="title roboto">Warm yourself to save the world.</h1>
 						<p class="description roboto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. lorem wd. turlupine !</p>
 					</div>
 				</div>
@@ -22,7 +22,10 @@
 			</div>
 			<div class="features roboto">
 				<div class="text-align-center">
-					<h2>What can it do?</h2>
+					<h2>Your heater cure diseases</h2>
+				</div>
+				<div class="w-100 text-align-center">
+					<p class="description">Your computer in this demo !</p>
 				</div>
 				<div class="features-list flex jc-space-between">
 					<div class="feature">
@@ -180,6 +183,14 @@ export default {
 
 
 <style scoped>
+	header {
+		justify-content: center;
+		margin-top: 15px;
+	}
+
+	main {
+		margin-top: -10px;
+	}
 
 	.intro {
 		margin: 5rem 0 3.5rem;
